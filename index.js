@@ -1,22 +1,13 @@
 const express = require('express')
 const app = express()
-// const cors = require('cors')
-// app.use(cors())
-const cors = require('cors');
-
-const corsOptions = {
-    origin: 'http://localhost:3000', // Replace with your React app's URL
-    credentials: true,
-    methods: 'POST',
-};
+const cors = require('cors')
+app.use(cors())
 
 
 app.use(cors(corsOptions));
 
 app.use(express.json())
 
-
-const _PORT = "5000"
 
 const mongoose = require('mongoose')
 const url = "mongodb+srv://MazenStartOnline:WC5ZYHuccWLKmkYR@startonlineorders.xiytpaf.mongodb.net/orders"
@@ -35,16 +26,6 @@ app.post('/makeorders',async (req,res)=>{
     await neworder.save()
     res.json(req.body)
 })
-
-
-
-
-
-app.listen(_PORT,()=> console.log("server started at port 5000"))
-
-
-
-
 
 
 
