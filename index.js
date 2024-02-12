@@ -4,7 +4,7 @@ const cors = require('cors')
 app.use(cors())
 
 app.use(express.json())
-
+const _PORT = "3001"
 
 const mongoose = require('mongoose')
 const url = "mongodb+srv://MazenStartOnline:WC5ZYHuccWLKmkYR@startonlineorders.xiytpaf.mongodb.net/orders"
@@ -19,6 +19,7 @@ app.get('/orders',async (req,res)=>{
 })
 
 app.post('/makeorders',async (req,res)=>{
+    
     const neworder = new orderModel(req.body)
     await neworder.save()
     res.json(req.body)
@@ -26,17 +27,7 @@ app.post('/makeorders',async (req,res)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+app.listen(_PORT,()=>console.log("server started"))
 
 
 

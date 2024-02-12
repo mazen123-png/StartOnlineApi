@@ -8,7 +8,7 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    govenorate: {
+    governorate: {
         type: String,
         required: true
     },
@@ -33,7 +33,7 @@ const orderSchema = new mongoose.Schema({
         required: true
     },
     date:{
-        type:Date,
+        type:String,
         required:true
     },
     comments: {
